@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_db/pages/main_page.dart';
+import 'package:project_db/pages/product_page.dart';
+import 'package:project_db/pages/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
 
       routes: {
         '/': (context) => const MainPage(),
-        // '/profile': (context) => const ProfilePage(),
+        '/profile': (context) => const ProfilePage(),
         //' /settings': (context) => const SettingsPage(),
         // '/login': (context) => const LoginPage(),
         // '/register': (context) => const RegisterPage(),
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
         // '/checkout' : (context) => CheckoutPage(),
         // '/payment' : (context) => PaymentPage(),
         // '/order' : (context) => OrderPage(),
+        '/product': (context) => const ProductDetailPage(),
 
 
 

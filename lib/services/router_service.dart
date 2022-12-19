@@ -12,6 +12,6 @@ class RouterService {
   }
 
   static void pushNamed(BuildContext context, String routeName) {
-    Navigator.pushNamed(context, routeName)
+    Navigator.pushNamed(context, routeName);
   }
 }
