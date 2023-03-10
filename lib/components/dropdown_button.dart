@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomDropDownButton extends StatelessWidget {
-  const CustomDropDownButton({Key? key,required this.items,required this.hintText, required this.onChanged, this.value}) : super(key: key);
+  const CustomDropDownButton({Key? key, this.items,required this.hintText, required this.onChanged,this.value}) : super(key: key);
 
-  final  List<DropdownMenuItem<Object>>? items;
-  final String hintText;
-  final void Function(Object? value)? onChanged;
-  final value;
+ final  List<DropdownMenuItem<Object>>? items;
+ final String hintText;
+ final void Function(Object?)? onChanged;
+ final value;
 
   @override
   Widget build(BuildContext context) {
@@ -29,4 +29,5 @@ class CustomDropDownButton extends StatelessWidget {
     );
   }
 
-}
+  }
+

@@ -1,7 +1,5 @@
 class Strings {
   static const defaultErrorMessage = "An Error Occured";
-  static const logoPath = 'assets/images/logo.png';
-  static const loginScreenPhotoPath = 'assets/images/login-screen-photo.jpg';
   static const appName = 'LinkedKTU';
   static const userName = 'Username';
   static const password = 'Password';
@@ -44,4 +42,5 @@ class Strings {
   static const home = 'Home';
 
   static const business = 'Business';
+  static const TL = '₺';
 }

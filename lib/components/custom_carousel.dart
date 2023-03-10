@@ -3,6 +3,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:project_db/consts/categories.dart';
 
+import 'category_appbar.dart';
+
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
   'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
@@ -27,7 +29,7 @@ class CarouselDemo extends StatelessWidget {
           themeMode: ThemeMode.values.toList()[value],
           debugShowCheckedModeBanner: false,
           routes: {
-            '/indicator': (ctx) => const CarouselWithIndicatorDemo(),
+            '/indicator': (ctx) =>  CarouselWithIndicatorDemo(),
           },
         );
       },
@@ -76,9 +78,10 @@ final List<Widget> imageSliders = imgList
     ))
     .toList();
 
-class CarouselWithIndicatorDemo extends StatefulWidget {
-  const CarouselWithIndicatorDemo({super.key});
 
+class CarouselWithIndicatorDemo extends StatefulWidget {
+   CarouselWithIndicatorDemo({super.key, this.hasAppBar = true});
+   bool hasAppBar;
   @override
   State<StatefulWidget> createState() {
     return _CarouselWithIndicatorState();
@@ -92,36 +95,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-
-          title: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-            for (var i = 0; i < Categories.generalCategories.keys.length; i++)
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: PopupMenuButton(
-                  itemBuilder: (context) {
-                    return [
-
-                      for(var j = 0; j < Categories.generalCategories.values.elementAt(i).length; j++)
-                        PopupMenuItem(
-                          value: j,
-                          child: Text(Categories.generalCategories.values.elementAt(i).elementAt(j)),
-                        ),
-
-                    ];
-                  },
-                  child: Text(Categories.generalCategories.keys.elementAt(i)),
-                ),
-              ),
-
-        ],
-      ),
-          )),
+      appBar: widget.hasAppBar ?  CategoryAppBar(context) as PreferredSizeWidget?: null,
       body: Column(children: [
         Expanded(
           child: CarouselSlider(
@@ -161,3 +135,5 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
     );
   }
 }
+
+

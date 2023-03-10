@@ -38,7 +38,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.0
   flutter_riverpod: ^1.0.4
+  http: ^0.13.5
   footer: ^0.0.4
+  jwt_decoder: ^2.0.1
 
 
 dev_dependencies:

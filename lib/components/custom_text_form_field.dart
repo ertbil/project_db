@@ -9,7 +9,7 @@ class CustomTextFormField extends StatefulWidget {
   bool isPhone;
   bool isNumber;
   TextEditingController? controller;
-  Icon prefixIcon;
+  Icon? prefixIcon;
   Icon? suffixIcon;
   bool isHidden;
   double? padding;
@@ -28,7 +28,7 @@ class CustomTextFormField extends StatefulWidget {
         this.isPhone = false,
         this.isNumber = false,
         this.controller,
-        required this.prefixIcon,
+         this.prefixIcon,
         this.suffixIcon,
         this.isHidden = true,
         this.padding = 8.0,
@@ -63,7 +63,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           ),
           labelText: widget.hintText,
           floatingLabelStyle: const TextStyle(
-            height: 4,
+            height: 0.5,
           ),
           filled: true,
           fillColor: Colors.grey[200],
